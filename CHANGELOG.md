@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.3.0](https://github.com/cclauss/gyp-next/compare/v0.2.1...v0.3.0) (2023-10-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* **msvs:** On Windows, arguments passed to the "action" commands are no longer transformed to replace slashes with backslashes.
+
+### Features
+
+* hoist shared libs to PRODUCT_DIR for all platforms ([1248a9d](https://github.com/cclauss/gyp-next/commit/1248a9dea3b49f47c236153bff76d89d6e7874f7))
+* port "add support for MSVC cross-compilation" from node ([72ea11b](https://github.com/cclauss/gyp-next/commit/72ea11b74407fcb2ffb41ec7d330008b2b5f6d81))
+* support source files with duplicate basename ([#62](https://github.com/cclauss/gyp-next/issues/62)) ([72eddfe](https://github.com/cclauss/gyp-next/commit/72eddfe67f0216c3109f59efdb38dd9a2f8dddc5))
+* **xcode:** --cross-compiling overrides arch-specific settings ([973bae0](https://github.com/cclauss/gyp-next/commit/973bae0b7b08be7b680ecae9565fbd04b3e0787d))
+
+
+### Bug Fixes
+
+* cmake on python 3 ([fd61f5f](https://github.com/cclauss/gyp-next/commit/fd61f5faa5275ec8fc98e3c7868c0dd46f109540))
+* do not rewrite absolute paths to avoid long paths ([#74](https://github.com/cclauss/gyp-next/issues/74)) ([c2ccc1a](https://github.com/cclauss/gyp-next/commit/c2ccc1a81f7f94433a94f4d01a2e820db4c4331a))
+* **msvs:** correctly rename object files for absolute paths ([#71](https://github.com/cclauss/gyp-next/issues/71)) ([f2c7618](https://github.com/cclauss/gyp-next/commit/f2c761838babf11024a3e6fab96d1e5a9dc1f556))
+* **msvs:** do not fix paths in action command arguments ([fc22f83](https://github.com/cclauss/gyp-next/commit/fc22f8335e2016da4aae4f4233074bd651d2faea))
+* only include MARMASM when toolset is target ([5a2794a](https://github.com/cclauss/gyp-next/commit/5a2794aefb58f0c00404ff042b61740bc8b8d5cd))
+* revert posix build job ([#86](https://github.com/cclauss/gyp-next/issues/86)) ([39dc34f](https://github.com/cclauss/gyp-next/commit/39dc34f0799c074624005fb9bbccf6e028607f9d))
+* xcode cmake parsing ([eefe8d1](https://github.com/cclauss/gyp-next/commit/eefe8d10e99863bc4ac7e2ed32facd608d400d4b))
+
 ## [0.7.0](https://www.github.com/nodejs/gyp-next/compare/v0.6.2...v0.7.0) (2020-12-17)
 
 
