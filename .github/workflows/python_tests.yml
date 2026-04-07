@@ -7,6 +7,17 @@ on:
   workflow_dispatch:
 
 jobs:
+  Python_lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.14"]
+    steps:
+      - uses: actions/checkout@v6
+      - name: Lint with ruff  # See pyproject.toml for settings
+        uses: astral-sh/ruff-action@v3
+      - run: ruff format --check --diff
+
   Python_tests:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -35,9 +46,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install --editable ".[dev]"
       - run: ./gyp -V && ./gyp --version && gyp -V && gyp --version
-      - name: Lint with ruff  # See pyproject.toml for settings
-        uses: astral-sh/ruff-action@v3
-      - run: ruff format --check --diff
       - name: Test with pytest  # See pyproject.toml for settings
         run: pytest
       # - name: Run doctests with pytest
